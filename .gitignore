@@ -1,0 +1,9 @@
+# emacs swap file
+*.sml~
+
+# instructions
+*.pdf
+*.html
+
+# OSX
+.DS_Store
