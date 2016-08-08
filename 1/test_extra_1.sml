@@ -56,3 +56,7 @@ val t8_3 = any [] = false;
 val t9_1 = all [true, true] = true;
 val t9_2 = all [true, false] = false;
 val t9_3 = all [] = false;
+
+(* 10 *)
+val t10_1 = zip ([1, 2, 3], [4, 6]) = [(1, 4), (2, 6)];
+val t10_2 = zip ([1, 2], [3, 4, 6]) = [(1, 3), (2, 4)];

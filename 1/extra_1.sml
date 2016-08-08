@@ -76,3 +76,9 @@ fun all (lst: bool list) =
       if null (tl lst)
       then hd lst
       else hd lst andalso all(tl lst))
+
+(* 10 *)
+fun zip (l1: int list, l2: int list) =
+  if null l1 orelse null l2
+  then []
+  else (hd l1, hd l2) :: zip(tl l1, tl l2)
