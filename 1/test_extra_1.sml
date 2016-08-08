@@ -46,3 +46,8 @@ val t7_2 = addAllOpt [SOME 1, NONE, SOME 2] = SOME 3;
 val t7_3 = addAllOpt [SOME 1] = SOME 1;
 val t7_4 = addAllOpt [NONE, NONE] = NONE;
 val t7_5 = addAllOpt [] = NONE;
+
+(* 8 *)
+val t8_1 = any [true, false] = true;
+val t8_2 = any [false, false] = false;
+val t8_3 = any [] = false;

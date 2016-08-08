@@ -65,3 +65,7 @@ fun addAllOpt (lst: (int option) list) =
 	      else hd lst
 	  else rest_opt
       end
+
+(* 8 *)
+fun any (lst: bool list) =
+  not (null lst) andalso (hd lst orelse any(tl lst))
