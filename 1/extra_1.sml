@@ -82,3 +82,32 @@ fun zip (l1: int list, l2: int list) =
   if null l1 orelse null l2
   then []
   else (hd l1, hd l2) :: zip(tl l1, tl l2)
+
+(* 11 *)
+(* TODO: This approach seems less elegent *)
+fun is_longer (t1: int list, t2: int list) =
+  if not (null t1) andalso null t2
+  then true
+  else if null t1
+  then false
+  else is_longer(tl t1, tl t2)
+
+fun normalize (l1: int list, l2: int list) =
+  let
+      val is_l1_longer = is_longer(l1, l2)
+      val longer_one = if is_l1_longer then l1 else l2
+      val shorter_one = if is_l1_longer then l2 else l1
+      fun double_match (shorter: int list) =
+	if is_longer(shorter, longer_one)
+	then shorter
+	else double_match(shorter @ shorter_one)
+  in
+      if is_l1_longer
+      then (l1, double_match l2)
+      else (double_match l1, l2)
+  end
+
+fun zipRecycle (l1: int list, l2: int list) =
+  if null l1 orelse null l2
+  then []
+  else zip(normalize(l1, l2))
