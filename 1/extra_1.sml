@@ -69,3 +69,10 @@ fun addAllOpt (lst: (int option) list) =
 (* 8 *)
 fun any (lst: bool list) =
   not (null lst) andalso (hd lst orelse any(tl lst))
+
+(* 9 *)
+fun all (lst: bool list) =
+  not (null lst) andalso (
+      if null (tl lst)
+      then hd lst
+      else hd lst andalso all(tl lst))

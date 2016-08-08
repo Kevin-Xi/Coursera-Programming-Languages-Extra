@@ -51,3 +51,8 @@ val t7_5 = addAllOpt [] = NONE;
 val t8_1 = any [true, false] = true;
 val t8_2 = any [false, false] = false;
 val t8_3 = any [] = false;
+
+(* 9 *)
+val t9_1 = all [true, true] = true;
+val t9_2 = all [true, false] = false;
+val t9_3 = all [] = false;
