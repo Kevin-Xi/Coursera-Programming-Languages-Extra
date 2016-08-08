@@ -26,3 +26,42 @@ fun cumsum (lst: int list) =
       let val rest = tl lst
       in hd lst :: cumsum ((hd lst + hd rest) :: tl rest)
       end
+
+(* 4 *)
+fun greeting (who: string option) =
+  let
+      val name = if isSome who
+		 then valOf who
+		 else "you"
+  in
+      "Hello there, " ^ name ^ "!"
+  end
+
+(* 5 *)
+fun repeat (elems: int list, times: int list) =
+  if null elems orelse null times
+  then []
+  else if hd times = 0
+  then repeat(tl elems, tl times)
+  else hd elems :: repeat(elems, (hd times - 1) :: (tl times))
+
+(* 6 *)
+fun addOpt (a1: int option, a2: int option) =
+  if isSome a1 andalso isSome a2
+  then SOME (valOf a1 + valOf a2)
+  else NONE
+
+(* 7 *)
+fun addAllOpt (lst: (int option) list) =
+  if null lst
+  then NONE
+  else
+      let val rest_opt = addAllOpt(tl lst)
+      in
+	  if isSome (hd lst)
+	  then
+	      if isSome rest_opt
+	      then SOME (valOf (hd lst) + valOf rest_opt)
+	      else hd lst
+	  else rest_opt
+      end
