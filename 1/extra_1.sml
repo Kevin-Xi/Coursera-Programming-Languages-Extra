@@ -17,3 +17,12 @@ fun min_max (lst: int list) =
 	  then (#1 min_max_of_rest, hd lst)
 	  else min_max_of_rest
       end
+
+(* 3 *)
+fun cumsum (lst: int list) =
+  if null (tl lst)
+  then lst
+  else
+      let val rest = tl lst
+      in hd lst :: cumsum ((hd lst + hd rest) :: tl rest)
+      end
