@@ -128,22 +128,25 @@ fun lookup (lst: (string * int) list, key: string) =
       else lookup (tl lst, key)
 
 (* 14 *)
+fun all_gte (lst: int list, threshold: int) =
+  if null lst
+  then []
+  else
+      if hd lst >= threshold
+      then hd lst :: all_gte(tl lst, threshold)
+      else all_gte(tl lst, threshold)
+
+fun all_lt (lst: int list, threshold: int) =
+  if null lst
+  then []
+  else
+      if hd lst < threshold
+      then hd lst :: all_lt(tl lst, threshold)
+      else all_lt(tl lst, threshold)
+
 fun splitup (lst: int list) =
-  let
-      fun all_nonnegative (lst: int list) =
-	if null lst
-	then []
-	else
-	    if hd lst >= 0
-	    then hd lst :: all_nonnegative(tl lst)
-	    else all_nonnegative(tl lst)
-      fun all_negative (lst: int list) =
-	if null lst
-	then []
-	else
-	    if hd lst < 0
-	    then hd lst :: all_negative(tl lst)
-	    else all_negative(tl lst)
-  in
-      (all_nonnegative lst, all_negative lst)
-  end
+  (all_gte (lst, 0), all_lt(lst, 0))
+
+(* 15 *)
+fun splitAt (lst: int list, threshold: int) =
+  (all_gte(lst, threshold), all_lt(lst, threshold))
