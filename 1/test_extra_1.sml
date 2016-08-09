@@ -67,3 +67,8 @@ val t11_1 = zipRecycle ([1, 2, 3], [1, 2, 3, 4, 5, 6, 7]) =
 val t11_2 = zipRecycle ([1, 2, 3], [1, 2]) = [(1, 1), (2, 2), (3, 1)];
 val t11_3 = zipRecycle ([], [1]) = [];
 val t11_4 = zipRecycle ([1], [2]) = [(1, 2)];
+
+(* 12 *)
+val t12_1 = zipOpt ([1, 2], [3, 4]) = SOME [(1, 3), (2, 4)];
+val t12_2 = zipOpt ([1, 2, 3], [4, 5]) = NONE;
+val t12_3 = zipOpt ([], []) = SOME [];

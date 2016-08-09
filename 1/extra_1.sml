@@ -111,3 +111,9 @@ fun zipRecycle (l1: int list, l2: int list) =
   if null l1 orelse null l2
   then []
   else zip(normalize(l1, l2))
+
+(* 12 *)
+fun zipOpt (l1: int list, l2: int list) =
+  if not (is_longer(l1, l2)) andalso not (is_longer(l2, l1))
+  then SOME (zip(l1, l2))
+  else NONE
