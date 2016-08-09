@@ -117,3 +117,12 @@ fun zipOpt (l1: int list, l2: int list) =
   if not (is_longer(l1, l2)) andalso not (is_longer(l2, l1))
   then SOME (zip(l1, l2))
   else NONE
+
+(* 13 *)
+fun lookup (lst: (string * int) list, key: string) =
+  if null lst
+  then NONE
+  else
+      if #1 (hd lst) = key
+      then SOME (#2 (hd lst))
+      else lookup (tl lst, key)

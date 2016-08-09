@@ -72,3 +72,8 @@ val t11_4 = zipRecycle ([1], [2]) = [(1, 2)];
 val t12_1 = zipOpt ([1, 2], [3, 4]) = SOME [(1, 3), (2, 4)];
 val t12_2 = zipOpt ([1, 2, 3], [4, 5]) = NONE;
 val t12_3 = zipOpt ([], []) = SOME [];
+
+(* 13 *)
+val t13_1 = lookup ([("a", 1), ("b", 2)], "a") = SOME 1;
+val t13_2 = lookup ([("a", 1), ("b", 2)], "c") = NONE;
+val t13_3 = lookup ([], "a") = NONE;
