@@ -77,3 +77,8 @@ val t12_3 = zipOpt ([], []) = SOME [];
 val t13_1 = lookup ([("a", 1), ("b", 2)], "a") = SOME 1;
 val t13_2 = lookup ([("a", 1), ("b", 2)], "c") = NONE;
 val t13_3 = lookup ([], "a") = NONE;
+
+(* 14 *)
+val t14_1 = splitup [1, 0, ~3, 6, 4, ~9] = ([1, 0, 6, 4], [~3, ~9]);
+val t14_2 = splitup [1, 2, 3] = ([1, 2, 3], []);
+val t14_3 = splitup [] = ([], []);

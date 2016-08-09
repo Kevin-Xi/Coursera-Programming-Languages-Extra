@@ -126,3 +126,24 @@ fun lookup (lst: (string * int) list, key: string) =
       if #1 (hd lst) = key
       then SOME (#2 (hd lst))
       else lookup (tl lst, key)
+
+(* 14 *)
+fun splitup (lst: int list) =
+  let
+      fun all_nonnegative (lst: int list) =
+	if null lst
+	then []
+	else
+	    if hd lst >= 0
+	    then hd lst :: all_nonnegative(tl lst)
+	    else all_nonnegative(tl lst)
+      fun all_negative (lst: int list) =
+	if null lst
+	then []
+	else
+	    if hd lst < 0
+	    then hd lst :: all_negative(tl lst)
+	    else all_negative(tl lst)
+  in
+      (all_nonnegative lst, all_negative lst)
+  end
