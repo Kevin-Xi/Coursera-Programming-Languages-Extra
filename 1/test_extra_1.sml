@@ -93,3 +93,10 @@ val t16_1 = isSorted [1, 1, 2, 4] = true;
 val t16_2 = isSorted [1, 1, 4, 3] = false;
 val t16_3 = isSorted [1] = true;
 val t16_4 = isSorted [] = true;
+
+(* 17 *)
+val t17_1 = isAnySorted [1, 1, 2, 4] = true;
+val t17_2 = isAnySorted [4, 2, 1, 1] = true;
+val t17_3 = isAnySorted [3, 5, 4, 2] = false;
+val t17_4 = isAnySorted [1] = true;
+val t17_5 = isAnySorted [] = true;

@@ -154,3 +154,12 @@ fun splitAt (lst: int list, threshold: int) =
 (* 16 *)
 fun isSorted (lst: int list) =
   null lst orelse null (tl lst) orelse hd lst <= hd (tl lst) andalso isSorted(tl lst)
+
+(* 17 *)
+fun reverse (lst: int list) =
+  if null lst orelse null (tl lst)
+  then lst
+  else (reverse(tl lst)) @ [(hd lst)]
+
+fun isAnySorted (lst: int list) =
+  isSorted(lst) orelse isSorted(reverse lst)
