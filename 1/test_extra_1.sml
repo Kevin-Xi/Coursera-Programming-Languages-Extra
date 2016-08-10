@@ -87,3 +87,9 @@ val t14_3 = splitup [] = ([], []);
 val t15_1 = splitAt ([1, 2, 3], 2) = ([2, 3], [1]);
 val t15_2 = splitAt ([1, 2, 3], 4) = ([], [1, 2, 3]);
 val t15_3 = splitAt ([], 0) = ([], []);
+
+(* 16 *)
+val t16_1 = isSorted [1, 1, 2, 4] = true;
+val t16_2 = isSorted [1, 1, 4, 3] = false;
+val t16_3 = isSorted [1] = true;
+val t16_4 = isSorted [] = true;

@@ -150,3 +150,7 @@ fun splitup (lst: int list) =
 (* 15 *)
 fun splitAt (lst: int list, threshold: int) =
   (all_gte(lst, threshold), all_lt(lst, threshold))
+
+(* 16 *)
+fun isSorted (lst: int list) =
+  null lst orelse null (tl lst) orelse hd lst <= hd (tl lst) andalso isSorted(tl lst)
