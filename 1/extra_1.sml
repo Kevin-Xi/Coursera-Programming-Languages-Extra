@@ -163,3 +163,13 @@ fun reverse (lst: int list) =
 
 fun isAnySorted (lst: int list) =
   isSorted(lst) orelse isSorted(reverse lst)
+
+(* 18 *)
+fun sortedMerge (l1: int list, l2: int list) =
+  if null l1
+  then l2
+  else if null l2
+  then l1
+  else if hd l1 <= hd l2
+  then hd l1 :: sortedMerge(tl l1, l2)
+  else hd l2 :: sortedMerge(l1, tl l2)

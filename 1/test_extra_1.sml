@@ -100,3 +100,8 @@ val t17_2 = isAnySorted [4, 2, 1, 1] = true;
 val t17_3 = isAnySorted [3, 5, 4, 2] = false;
 val t17_4 = isAnySorted [1] = true;
 val t17_5 = isAnySorted [] = true;
+
+(* 18 *)
+val t18_1 = sortedMerge ([1, 4, 7], [5, 8, 9]) = [1, 4, 5, 7, 8, 9];
+val t18_2 = sortedMerge ([], [2, 3]) = [2, 3];
+val t18_3 = sortedMerge ([9], [2, 3, 4]) = [2, 3, 4, 9];
