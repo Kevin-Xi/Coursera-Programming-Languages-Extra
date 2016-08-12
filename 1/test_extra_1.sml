@@ -127,3 +127,8 @@ val t21_4 = not_so_quick_sort [6, 8, 9, 11, 43, 44] = [6, 8, 9, 11, 43, 44];
 (* 22 *)
 val t22_1 = fullDivide (2, 40) = (3, 5);
 val t22_2 = fullDivide (3, 10) = (0, 10);
+
+(* 23 *)
+val t23_1 = factorize (20)(* = [(2, 2), (5, 1)]*);
+val t23_2 = factorize (36) = [(2, 2), (3, 2)];
+val t23_3 = factorize (1) = [];

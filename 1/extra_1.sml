@@ -224,3 +224,21 @@ fun fullDivide (k: int, n: int) =
       let val next = fullDivide(k, n div k)
       in (1 + #1 next, #2 next)
       end
+
+(* 23 *)
+fun factorize (n: int) =
+  let
+      fun gen_rest (k: int, n: int) =
+	(* why say sqrt of n? *)
+	if k > n
+	then []
+	else
+	    let val full_divided = fullDivide(k, n)
+	    in
+		if #1 full_divided = 0
+		then gen_rest(k + 1, #2 full_divided)
+		else (k, #1 full_divided) :: gen_rest(k + 1, #2 full_divided)
+	    end
+  in
+      gen_rest(2, n)
+  end
