@@ -202,3 +202,16 @@ the #1 (result of the whole list) *)
   in
       gen_divide(lst, [], [])
   end
+
+(* 21 *)
+fun not_so_quick_sort (lst: int list) =
+  if null lst orelse null (tl lst)
+  then lst
+  else
+      let
+	  val divided = divide(lst)
+	  val res1 = not_so_quick_sort(#1 divided)
+	  val res2 = not_so_quick_sort(#2 divided)
+      in
+	  sortedMerge(res1, res2)
+      end

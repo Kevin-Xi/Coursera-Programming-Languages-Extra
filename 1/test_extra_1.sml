@@ -117,3 +117,9 @@ val t20_1 = divide [1, 2, 3, 4, 5] = ([1, 3, 5], [2, 4]);
 val t20_2 = divide [2, 5, 8, 9] = ([2, 8], [5, 9]);
 val t20_3 = divide [1] = ([1], []);
 val t20_4 = divide [] = ([], []);
+
+(* 21 *)
+val t21_1 = not_so_quick_sort [1, 3, 5, 4, 2] = [1, 2, 3, 4, 5];
+val t21_2 = not_so_quick_sort [] = [];
+val t21_3 = not_so_quick_sort [1] = [1];
+val t21_4 = not_so_quick_sort [6, 8, 9, 11, 43, 44] = [6, 8, 9, 11, 43, 44];
