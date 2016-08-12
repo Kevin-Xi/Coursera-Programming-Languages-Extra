@@ -186,3 +186,19 @@ fun qsort (lst: int list) =
       in
 	  sorted_2 @ [hd lst] @ sorted_1
       end
+
+(* 20 *)
+fun divide (lst: int list) =
+  let
+      fun gen_divide (lst: int list, first: int list, second: int list) =
+	if null lst
+	then (first, second)
+	else
+	    let val rest = gen_divide(tl lst, first, second)
+	    (* the #2 (result of the sublist) should be part of
+the #1 (result of the whole list) *)
+	    in (hd lst :: (#2 rest), #1 rest)
+	    end
+  in
+      gen_divide(lst, [], [])
+  end
