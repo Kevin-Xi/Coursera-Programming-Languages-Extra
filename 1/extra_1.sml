@@ -173,3 +173,16 @@ fun sortedMerge (l1: int list, l2: int list) =
   else if hd l1 <= hd l2
   then hd l1 :: sortedMerge(tl l1, l2)
   else hd l2 :: sortedMerge(l1, tl l2)
+
+(* 19 *)
+fun qsort (lst: int list) =
+  if null lst orelse null (tl lst)
+  then lst
+  else
+      let
+	  val two_parts = splitAt(tl lst, hd lst)
+	  val sorted_1 = qsort(#1 two_parts)
+	  val sorted_2 = qsort(#2 two_parts)
+      in
+	  sorted_2 @ [hd lst] @ sorted_1
+      end

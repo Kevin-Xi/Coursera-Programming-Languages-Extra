@@ -105,3 +105,9 @@ val t17_5 = isAnySorted [] = true;
 val t18_1 = sortedMerge ([1, 4, 7], [5, 8, 9]) = [1, 4, 5, 7, 8, 9];
 val t18_2 = sortedMerge ([], [2, 3]) = [2, 3];
 val t18_3 = sortedMerge ([9], [2, 3, 4]) = [2, 3, 4, 9];
+
+(* 19 *)
+val t19_1 = qsort [1, 3, 5, 4, 2] = [1, 2, 3, 4, 5];
+val t19_2 = qsort [] = [];
+val t19_3 = qsort [1] = [1];
+val t19_4 = qsort [6, 8, 9, 11, 43, 44] = [6, 8, 9, 11, 43, 44];
