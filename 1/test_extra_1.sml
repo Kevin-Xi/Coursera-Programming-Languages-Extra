@@ -129,6 +129,11 @@ val t22_1 = fullDivide (2, 40) = (3, 5);
 val t22_2 = fullDivide (3, 10) = (0, 10);
 
 (* 23 *)
-val t23_1 = factorize (20)(* = [(2, 2), (5, 1)]*);
+val t23_1 = factorize (20)= [(2, 2), (5, 1)];
 val t23_2 = factorize (36) = [(2, 2), (3, 2)];
 val t23_3 = factorize (1) = [];
+
+(* 24 *)
+val t24_1 = multiply (factorize(20)) = 20;
+val t24_2 = multiply (factorize(36)) = 36;
+val t24_3 = multiply (factorize(1)) = 1;

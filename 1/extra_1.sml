@@ -242,3 +242,14 @@ fun factorize (n: int) =
   in
       gen_rest(2, n)
   end
+
+(* 24 *)
+fun power (n: int, k: int) =
+  if k = 0
+  then 1
+  else n * power(n, k - 1)
+
+fun multiply (factors: (int * int) list) =
+  if null factors
+  then 1
+  else power(hd factors) * multiply(tl factors)
