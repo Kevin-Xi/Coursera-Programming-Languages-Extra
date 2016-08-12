@@ -215,3 +215,12 @@ fun not_so_quick_sort (lst: int list) =
       in
 	  sortedMerge(res1, res2)
       end
+
+(* 22 *)
+fun fullDivide (k: int, n: int) =
+  if n mod k <> 0
+  then (0, n)
+  else
+      let val next = fullDivide(k, n div k)
+      in (1 + #1 next, #2 next)
+      end
