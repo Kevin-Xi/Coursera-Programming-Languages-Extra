@@ -12,7 +12,7 @@ val test_is_positive_5 = is_positive 2 = true
 val test_is_positive_6 = is_positive 100 = true
 
 (* Divisibility *)
-(* val test_is_divisible_by_1 = is_divisible_by (6, 3) = true
+val test_is_divisible_by_1 = is_divisible_by (6, 3) = true
 val test_is_divisible_by_2 = is_divisible_by (5, 3) = false
 val test_is_divisible_by_3 = is_divisible_by (6, 4) = false
 val test_is_divisible_by_4 = is_divisible_by (6, 2) = true
@@ -23,7 +23,7 @@ val test_is_divisible_by_6 = is_divisible_by (6, 1) = true
 
 (* NOTE: These tests do not verify that you're not using the div operator. *)
 (* You should check that yourself! *)
-
+(*
 val test_divide_by_1 = divide_by (6, 3) = 2
 val test_divide_by_2 = divide_by (5, 3) = 1
 val test_divide_by_3 = divide_by (6, 4) = 1
