@@ -23,7 +23,7 @@ val test_is_divisible_by_6 = is_divisible_by (6, 1) = true
 
 (* NOTE: These tests do not verify that you're not using the div operator. *)
 (* You should check that yourself! *)
-(*
+
 val test_divide_by_1 = divide_by (6, 3) = 2
 val test_divide_by_2 = divide_by (5, 3) = 1
 val test_divide_by_3 = divide_by (6, 4) = 1
@@ -32,7 +32,7 @@ val test_divide_by_5 = divide_by (87, 29) = 3
 val test_divide_by_6 = divide_by (6, 1) = 6
 val test_divide_by_7 = divide_by (8, 9) = 0
 val test_divide_by_8 = divide_by (8, 8) = 1
-
+(*
 (* Greatest Common Divisor *)
 val test_gcd_1 = gcd (18, 12) = 6
 val test_gcd_2 = gcd (18, 13) = 1
