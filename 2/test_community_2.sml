@@ -50,7 +50,7 @@ val test_number_passed_3 = number_passed [{ id = 12, grade = SOME 100 }, { id = 
     { id = 9, grade = NONE }, { id = 2, grade = NONE }] = 1
 val test_number_passed_4 = number_passed [{ id = 1, grade = SOME 76 }, { id = 2, grade = SOME 82 },
     { id = 5, grade = SOME 96 }] = 3
-(*
+
 (* Pass/Fail -- 4 *)
 val test_group_by_outcome_1 = group_by_outcome [{ id = 1025, grade = NONE },
     { id = 4, grade = SOME 99 }] = [(pass, [4]), (fail, [1025])]
@@ -63,7 +63,7 @@ val test_group_by_outcome_4 = group_by_outcome [{ id = 1025, grade = SOME 76 }, 
     { id = 1111, grade = SOME 89 }] = [(pass, [1025, 4, 1111]), (fail, [13, 34])]
 (* causes polyEqual warning if group_by_outcome has a polymorphic type -- that's ok *)
 val test_group_by_outcome_5 = group_by_outcome [] = []
-
+(*
 (** Forest For The Trees **)
 
 (* Forest For The Trees -- 1 *)

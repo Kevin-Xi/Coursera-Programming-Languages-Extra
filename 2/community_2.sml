@@ -35,3 +35,29 @@ fun number_passed gs =
   in
       aux(gs, 0)
   end
+
+(* Pass/Fail -- 4 *)
+fun group_by_outcome gs =
+  let
+      (* can pass fun as arg *)
+      (* if tail call, should use @ here *)
+      fun build_pass_list gs =
+	case gs of
+	    [] => []
+	  | {id, grade} :: gs' => if has_passed {id=id, grade=grade}
+			then id :: build_pass_list gs'
+			else build_pass_list gs'
+
+      fun build_fail_list gs =
+	case gs of
+	    [] => []
+	  | {id, grade} :: gs' => if not (has_passed {id=id, grade=grade})
+			then id :: build_fail_list gs'
+			else build_fail_list gs'
+  in
+      case (build_pass_list gs, build_fail_list gs) of
+	  ([], []) => []
+	| (ps, []) => [(pass, ps)]
+	| ([], fs) => [(fail, fs)]
+	| (ps, fs) => [(pass, ps), (fail, fs)]
+  end
