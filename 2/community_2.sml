@@ -20,3 +20,7 @@ fun pass_or_fail {id, grade} =
   case grade of
       NONE => fail
     | SOME g => if g >= 75 then pass else fail
+
+(* Pass/Fail -- 2 *)
+fun has_passed g =
+  pass_or_fail g = pass
