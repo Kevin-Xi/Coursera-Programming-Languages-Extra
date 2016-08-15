@@ -41,7 +41,7 @@ val test_has_passed_5 = has_passed { id = 432, grade = SOME 74 } = false
 val test_has_passed_6 = has_passed { id = 2, grade = SOME 75 } = true
 val test_has_passed_7 = has_passed { id = 13, grade = SOME 100 } = true
 val test_has_passed_8 = has_passed { id = 15, grade = SOME 86 } = true
-(*
+
 (* Pass/Fail -- 3 *)
 val test_number_passed_1 = number_passed [{ id = 1, grade = SOME 65 }, { id = 2, grade = SOME 82 },
     { id = 3, grade = NONE }, { id = 5, grade = SOME 96 }] = 2
@@ -50,7 +50,7 @@ val test_number_passed_3 = number_passed [{ id = 12, grade = SOME 100 }, { id = 
     { id = 9, grade = NONE }, { id = 2, grade = NONE }] = 1
 val test_number_passed_4 = number_passed [{ id = 1, grade = SOME 76 }, { id = 2, grade = SOME 82 },
     { id = 5, grade = SOME 96 }] = 3
-
+(*
 (* Pass/Fail -- 4 *)
 val test_group_by_outcome_1 = group_by_outcome [{ id = 1025, grade = NONE },
     { id = 4, grade = SOME 99 }] = [(pass, [4]), (fail, [1025])]

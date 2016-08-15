@@ -24,3 +24,14 @@ fun pass_or_fail {id, grade} =
 (* Pass/Fail -- 2 *)
 fun has_passed g =
   pass_or_fail g = pass
+
+(* Pass/Fail -- 3 *)
+fun number_passed gs =
+  let
+      fun aux(gs, acc) =
+	case gs of
+	    [] => acc
+	  | g :: gs' => if has_passed g then aux(gs', acc + 1) else aux(gs', acc)
+  in
+      aux(gs, 0)
+  end
