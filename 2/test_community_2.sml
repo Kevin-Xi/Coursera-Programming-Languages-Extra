@@ -19,7 +19,7 @@ val test_length_of_a_list_2 = length_of_a_list [] = 0
 val test_length_of_a_list_3 = length_of_a_list [[], [], [1, 2]] = 3
 val test_length_of_a_list_4 = length_of_a_list [(1, "hi"), (2, "there")] = 2
 val test_length_of_a_list_5 = length_of_a_list ["a", "quick", "brown", "fox"] = 4
-(*
+
 (** Pass/Fail **)
 
 (* Pass/Fail -- 1 *)
@@ -31,7 +31,7 @@ val test_pass_or_fail_5 = pass_or_fail { id = 432, grade = SOME 74 } = fail
 val test_pass_or_fail_6 = pass_or_fail { id = 2, grade = SOME 75 } = pass
 val test_pass_or_fail_7 = pass_or_fail { id = 13, grade = SOME 100 } = pass
 val test_pass_or_fail_8 = pass_or_fail { id = 15, grade = SOME 86 } = pass
-
+(*
 (* Pass/Fail -- 2 *)
 val test_has_passed_1 = has_passed { id = 1023, grade = SOME 73 } = false
 val test_has_passed_2 = has_passed { id = 1, grade = SOME 48 } = false
