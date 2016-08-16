@@ -65,6 +65,7 @@ fun group_by_outcome gs =
 
 (* === Forest For The Trees === *)
 datatype 'a tree = leaf | node of { value: 'a, left: 'a tree, right: 'a tree }
+datatype flag = leave_me_alone | prune_me
 
 (* Forest For The Trees *)
 fun tree_height t =
@@ -77,3 +78,11 @@ fun sum_tree t =
   case t of
       leaf => 0
    | node {value, left, right} => value + sum_tree left + sum_tree right
+
+(* Forest For The Trees -- 3 *)
+fun gardener t =
+  case t of
+      leaf => leaf
+    | node {value, left, right} => case value of
+				       leave_me_alone => node {value = value, left = gardener left, right = gardener right}
+				     | prune_me => leaf
