@@ -71,3 +71,9 @@ fun tree_height t =
   case t of
       leaf => 0
     | node {value, left, right} => 1 + Int.max(tree_height left, tree_height right)
+
+(* Forest For The Trees -- 2 *)
+fun sum_tree t =
+  case t of
+      leaf => 0
+   | node {value, left, right} => value + sum_tree left + sum_tree right
