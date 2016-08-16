@@ -63,7 +63,7 @@ val test_group_by_outcome_4 = group_by_outcome [{ id = 1025, grade = SOME 76 }, 
     { id = 1111, grade = SOME 89 }] = [(pass, [1025, 4, 1111]), (fail, [13, 34])]
 (* causes polyEqual warning if group_by_outcome has a polymorphic type -- that's ok *)
 val test_group_by_outcome_5 = group_by_outcome [] = []
-(*
+
 (** Forest For The Trees **)
 
 (* Forest For The Trees -- 1 *)
@@ -75,7 +75,7 @@ val test_tree_height_3 = tree_height (node { value = "abcde", left = leaf, right
 val test_tree_height_4 = tree_height (node { value = true, left = leaf, right = leaf }) = 1
 val test_tree_height_5 = tree_height (node { value = 0, left = leaf,
     right = node { value = 0, left = node { value = 0, left = leaf, right = leaf }, right = leaf } }) = 3
-
+(*
 (* Forest For The Trees -- 2 *)
 val test_sum_tree_1 = sum_tree (node { value = 1, left = node { value = 2,
     left = node { value = 3, left = leaf, right = leaf }, right = leaf },

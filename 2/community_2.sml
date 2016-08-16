@@ -61,3 +61,13 @@ fun group_by_outcome gs =
 	| ([], fs) => [(fail, fs)]
 	| (ps, fs) => [(pass, ps), (fail, fs)]
   end
+
+
+(* === Forest For The Trees === *)
+datatype 'a tree = leaf | node of { value: 'a, left: 'a tree, right: 'a tree }
+
+(* Forest For The Trees *)
+fun tree_height t =
+  case t of
+      leaf => 0
+    | node {value, left, right} => 1 + Int.max(tree_height left, tree_height right)
