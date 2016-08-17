@@ -86,3 +86,17 @@ fun gardener t =
     | node {value, left, right} => case value of
 				       leave_me_alone => node {value = value, left = gardener left, right = gardener right}
 				     | prune_me => leaf
+
+(* GCD -- Redux *)
+fun gcd (a : int, b : int) =
+    if a = b
+    then a
+    else
+	if a < b
+        then gcd (a, b - a)
+        else gcd (a - b, b)
+
+fun gcd_list lst =
+  case lst of
+      head :: nil => head
+   | head :: rest => gcd(head, gcd_list rest)

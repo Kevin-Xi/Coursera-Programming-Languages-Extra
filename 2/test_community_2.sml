@@ -110,7 +110,7 @@ val test_gardener_7 = gardener (node { value = leave_me_alone, left = leaf, righ
 val test_gardener_8 = gardener (node { value = leave_me_alone, left = leaf,
     right = node { value = prune_me, left = node { value = prune_me, left = leaf, right = leaf }, right = leaf } }) =
     node { value = leave_me_alone, left = leaf, right = leaf }
-(*
+
 (** Back To The Future! **)
 
 (* GCD -- Redux *)
@@ -121,7 +121,7 @@ val test_gcd_list_4 = gcd_list [10, 18, 12] = 2
 val test_gcd_list_5 = gcd_list [100, 1000, 1] = 1
 val test_gcd_list_6 = gcd_list [18, 12, 180, 42] = 6
 val test_gcd_list_7 = gcd_list [18, 12] = 6
-
+(*
 (* Element Of A List -- Redux *)
 val test_any_divisible_by_1 = any_divisible_by ([13, 1, 20], 5) = true
 val test_any_divisible_by_2 = any_divisible_by ([13, 1, 20], 3) = false
