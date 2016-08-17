@@ -50,7 +50,7 @@ val test_lcm_4 = lcm (12, 15) = 60
 val test_lcm_5 = lcm (5, 3) = 15
 val test_lcm_6 = lcm (100, 1) = 100
 val test_lcm_7 = lcm (1, 10) = 10
-(*
+
 (* Greatest Common Divisor -- Continued *)
 val test_gcd_list_1 = gcd_list [18, 12, 3] = 3
 val test_gcd_list_2 = gcd_list [18] = 18
@@ -59,7 +59,7 @@ val test_gcd_list_4 = gcd_list [10, 18, 12] = 2
 val test_gcd_list_5 = gcd_list [100, 1000, 1] = 1
 val test_gcd_list_6 = gcd_list [18, 12, 180, 42] = 6
 val test_gcd_list_7 = gcd_list [18, 12] = 6
-
+(*
 (* Element Of A List *)
 val test_any_divisible_by_1 = any_divisible_by ([13, 1, 20], 5) = true
 val test_any_divisible_by_2 = any_divisible_by ([13, 1, 20], 3) = false

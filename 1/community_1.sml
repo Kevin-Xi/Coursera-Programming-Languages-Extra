@@ -23,3 +23,9 @@ fun gcd (a: int, b: int) =
 (* 5 *)
 fun lcm (a: int, b: int) =
   (a div gcd(a, b)) * b;
+
+(* 6 *)
+fun gcd_list (lst: int list) =
+  if null (tl lst)
+  then hd lst
+  else gcd(hd lst, gcd_list(tl lst));
