@@ -19,3 +19,7 @@ fun gcd (a: int, b: int) =
   else if a > b
   then gcd(a - b, b)
   else gcd(a, b - a);
+
+(* 5 *)
+fun lcm (a: int, b: int) =
+  (a div gcd(a, b)) * b;
