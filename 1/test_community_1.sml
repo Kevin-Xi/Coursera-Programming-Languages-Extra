@@ -32,7 +32,7 @@ val test_divide_by_5 = divide_by (87, 29) = 3
 val test_divide_by_6 = divide_by (6, 1) = 6
 val test_divide_by_7 = divide_by (8, 9) = 0
 val test_divide_by_8 = divide_by (8, 8) = 1
-(*
+
 (* Greatest Common Divisor *)
 val test_gcd_1 = gcd (18, 12) = 6
 val test_gcd_2 = gcd (18, 13) = 1
@@ -41,7 +41,7 @@ val test_gcd_4 = gcd (12, 15) = 3
 val test_gcd_5 = gcd (5, 3) = 1
 val test_gcd_6 = gcd (100, 1) = 1
 val test_gcd_7 = gcd (1, 10) = 1
-
+(*
 (* Least Common Multiple *)
 val test_lcm_1 = lcm (18, 12) = 36
 val test_lcm_2 = lcm (18, 13) =  234

@@ -11,3 +11,11 @@ fun divide_by (divee: int, diver: int) =
   if divee < diver
   then 0
   else 1 + divide_by(divee - diver, diver);
+
+(* 4 *)
+fun gcd (a: int, b: int) =
+  if a = b
+  then a
+  else if a > b
+  then gcd(a - b, b)
+  else gcd(a, b - a);
