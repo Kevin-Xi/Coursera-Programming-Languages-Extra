@@ -123,4 +123,10 @@ fun add_all_opt lst =
 			  (SOME h, SOME r) => SOME (h + r)
 			| (NONE, SOME r) => SOME r
 			| (SOME h, NONE) => SOME h
-			| (NONE, NONE) => NONE
+			| (NONE, NONE) => NONE;
+
+(* Flip Flop -- Redux *)
+fun alternate lst =
+  case lst of
+      [] => 0
+    | h :: lst' => h - alternate lst';

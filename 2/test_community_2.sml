@@ -143,14 +143,14 @@ val test_add_all_opt_2 = add_all_opt [] = NONE
 val test_add_all_opt_3 = add_all_opt [NONE, NONE, NONE] = NONE
 val test_add_all_opt_4 = add_all_opt [SOME 123] = SOME 123
 val test_add_all_opt_5 = add_all_opt [NONE, SOME ~1, NONE, NONE] = SOME ~1
-(*
+
 (* Flip Flop -- Redux *)
 val test_alternate_1 = alternate [1, 2, 3, 4] = ~2
 val test_alternate_2 = alternate [] = 0
 val test_alternate_3 = alternate [~100] = ~100
 val test_alternate_4 = alternate [1, ~2, 3, ~4] = 10
 val test_alternate_5 = alternate [~1, 2, ~3, 4] = ~10
-
+(*
 (* Minimum/Maximum -- Redux *)
 val test_min_max_1 = min_max [3, 1, 2, 5, 4] = (1, 5)
 val test_min_max_2 = min_max [1] = (1, 1)
