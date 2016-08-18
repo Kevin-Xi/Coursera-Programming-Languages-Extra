@@ -108,3 +108,9 @@ fun any_divisible_by (lst, d) =
   case lst of
       [] => false
     | head :: rest => is_divisible_by(head, d) orelse any_divisible_by(rest, d);
+
+(* Quirky Addition -- Redux *)
+fun add_opt arg =
+  case arg of
+      (SOME a, SOME b) => SOME (a + b)
+    | _ => NONE;

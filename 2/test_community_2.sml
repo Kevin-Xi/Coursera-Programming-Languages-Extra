@@ -129,14 +129,14 @@ val test_any_divisible_by_3 = any_divisible_by ([], 5) = false
 val test_any_divisible_by_4 = any_divisible_by ([13, 1, 20], 13) = true
 val test_any_divisible_by_5 = any_divisible_by ([13, 1, 20], 12) = false
 val test_any_divisible_by_6 = any_divisible_by ([13, 1, 20], 1) = true
-(*
+
 (* Quirky Addition -- Redux *)
 val test_add_opt_1 = add_opt (SOME 1, SOME 2) = SOME 3
 val test_add_opt_2 = add_opt (SOME 1, NONE) = NONE
 val test_add_opt_3 = add_opt (NONE, SOME 2) = NONE
 val test_add_opt_4 = add_opt (NONE, NONE) = NONE
 val test_add_opt_5 = add_opt (SOME ~123, SOME 15) = SOME ~108
-
+(*
 (* Quirky Addition -- Continued -- Redux *)
 val test_add_all_opt_1 = add_all_opt [SOME 1, NONE, SOME 3] = SOME 4
 val test_add_all_opt_2 = add_all_opt [] = NONE
