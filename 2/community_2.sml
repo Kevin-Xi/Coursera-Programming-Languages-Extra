@@ -99,4 +99,12 @@ fun gcd (a : int, b : int) =
 fun gcd_list lst =
   case lst of
       head :: nil => head
-   | head :: rest => gcd(head, gcd_list rest)
+    | head :: rest => gcd(head, gcd_list rest);
+
+(* Element Of A List -- Redux *)
+fun is_divisible_by (a, b) = a mod b = 0;
+
+fun any_divisible_by (lst, d) =
+  case lst of
+      [] => false
+    | head :: rest => is_divisible_by(head, d) orelse any_divisible_by(rest, d);
