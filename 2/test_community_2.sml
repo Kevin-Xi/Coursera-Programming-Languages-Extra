@@ -136,14 +136,14 @@ val test_add_opt_2 = add_opt (SOME 1, NONE) = NONE
 val test_add_opt_3 = add_opt (NONE, SOME 2) = NONE
 val test_add_opt_4 = add_opt (NONE, NONE) = NONE
 val test_add_opt_5 = add_opt (SOME ~123, SOME 15) = SOME ~108
-(*
+
 (* Quirky Addition -- Continued -- Redux *)
 val test_add_all_opt_1 = add_all_opt [SOME 1, NONE, SOME 3] = SOME 4
 val test_add_all_opt_2 = add_all_opt [] = NONE
 val test_add_all_opt_3 = add_all_opt [NONE, NONE, NONE] = NONE
 val test_add_all_opt_4 = add_all_opt [SOME 123] = SOME 123
 val test_add_all_opt_5 = add_all_opt [NONE, SOME ~1, NONE, NONE] = SOME ~1
-
+(*
 (* Flip Flop -- Redux *)
 val test_alternate_1 = alternate [1, 2, 3, 4] = ~2
 val test_alternate_2 = alternate [] = 0

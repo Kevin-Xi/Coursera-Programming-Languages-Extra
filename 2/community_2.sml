@@ -114,3 +114,13 @@ fun add_opt arg =
   case arg of
       (SOME a, SOME b) => SOME (a + b)
     | _ => NONE;
+
+(* Quirky Addition -- Continued -- Redux *)
+fun add_all_opt lst =
+  case lst of
+      [] => NONE
+    | head :: rest => case (head, add_all_opt rest) of
+			  (SOME h, SOME r) => SOME (h + r)
+			| (NONE, SOME r) => SOME r
+			| (SOME h, NONE) => SOME h
+			| (NONE, NONE) => NONE
