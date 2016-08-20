@@ -130,3 +130,15 @@ fun alternate lst =
   case lst of
       [] => 0
     | h :: lst' => h - alternate lst';
+
+(* Minimum/Maximum -- Redux *)
+fun min_max lst =
+  case lst of
+      [] => raise Empty
+    | h :: [] => (h, h)
+    | h :: rest => let val (min, max) = min_max rest
+		   in
+		       if h < min then (h, max)
+		       else if h > max then (min, h)
+		       else (min, max)
+		   end;

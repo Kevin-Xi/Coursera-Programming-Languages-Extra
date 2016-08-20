@@ -150,12 +150,12 @@ val test_alternate_2 = alternate [] = 0
 val test_alternate_3 = alternate [~100] = ~100
 val test_alternate_4 = alternate [1, ~2, 3, ~4] = 10
 val test_alternate_5 = alternate [~1, 2, ~3, 4] = ~10
-(*
+
 (* Minimum/Maximum -- Redux *)
 val test_min_max_1 = min_max [3, 1, 2, 5, 4] = (1, 5)
 val test_min_max_2 = min_max [1] = (1, 1)
 val test_min_max_3 = min_max [~1000000, 1, 1, 1, 1000000] = (~1000000, 1000000)
-
+(*
 (* Lists And Tuples, Oh My! -- Redux *)
 val test_unzip_1 = unzip [(1, 2), (3, 4), (5, 6)] = ([1, 3, 5], [2, 4, 6])
 (* causes polyEqual warning if unzip has a polymorphic type -- that's ok *)
