@@ -142,3 +142,13 @@ fun min_max lst =
 		       else if h > max then (min, h)
 		       else (min, max)
 		   end;
+
+(* Lists And Tuples, Oh My! - Redux *)
+fun unzip lst =
+  case lst of
+      [] => ([], [])
+    | (fst, snd) :: rest => let
+	val (fst_part, snd_part) = unzip rest
+    in
+	(fst :: fst_part, snd :: snd_part)
+    end;

@@ -155,13 +155,13 @@ val test_alternate_5 = alternate [~1, 2, ~3, 4] = ~10
 val test_min_max_1 = min_max [3, 1, 2, 5, 4] = (1, 5)
 val test_min_max_2 = min_max [1] = (1, 1)
 val test_min_max_3 = min_max [~1000000, 1, 1, 1, 1000000] = (~1000000, 1000000)
-(*
+
 (* Lists And Tuples, Oh My! -- Redux *)
 val test_unzip_1 = unzip [(1, 2), (3, 4), (5, 6)] = ([1, 3, 5], [2, 4, 6])
 (* causes polyEqual warning if unzip has a polymorphic type -- that's ok *)
 val test_unzip_2 = unzip [] = ([], [])
 val test_unzip_3 = unzip [(123, 321), (321, 123)] = ([123, 321], [321, 123])
-
+(*
 (* BBCA -- Redux *)
 val test_repeats_list_1 = repeats_list (["abc", "def", "ghi"], [4, 0, 3]) =
     ["abc", "abc", "abc", "abc", "ghi", "ghi", "ghi"]
