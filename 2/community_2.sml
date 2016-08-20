@@ -152,3 +152,10 @@ fun unzip lst =
     in
 	(fst :: fst_part, snd :: snd_part)
     end;
+
+(* BBCA -- Redux *)
+fun repeats_list (strs, counts) =
+  case (strs, counts) of
+      ([], []) => []
+    | (_ :: strs', 0 :: counts') => repeats_list(strs', counts')
+    | (str :: strs', count :: counts') => str :: repeats_list(str :: strs', count - 1 :: counts')
