@@ -10,3 +10,7 @@ fun unfold f state =
   case f state of
       NONE => []
     | SOME(next_state, elem) => elem :: (unfold f next_state);
+
+(* A Novel Approach *)
+(* The time complexity is O(n) as tail-recursive version, but the space complexity is O(n) compare to O(1) of tail-recursive version *)
+val factorial = (List.foldl (op * ) 1) o (unfold (fn x => if x < 1 then NONE else SOME(x - 1, x)));

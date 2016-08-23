@@ -27,13 +27,13 @@ val test_unfold_1 = unfold (fn x => if x > 3 then NONE else SOME (x + 1, x)) 0 =
 val test_unfold_2 = unfold (fn _ => NONE) false = []
 val test_unfold_3 = unfold (fn str => if String.size str > 12 then NONE else SOME ("Banana" ^ str, str)) "" =
     ["", "Banana", "BananaBanana"]
-(*
+
 (* A Novel Approach *)
 val test_factorial_1 = factorial 4 = 24
 val test_factorial_2 = factorial 0 = 1
 val test_factorial_3 = factorial 5 = 120
 val test_factorial_4 = factorial 7 = 5040
-
+(*
 (* Unforeseen Developments *)
 val test_unfold_map_1 = unfold_map (fn x => x + 1) [1, 2, 3, 4, 5] = [2, 3, 4, 5, 6]
 val test_unfold_map_2 = unfold_map (fn x => x) [] = []
