@@ -40,12 +40,12 @@ val test_unfold_map_2 = unfold_map (fn x => x) [] = []
 val test_unfold_map_3 = unfold_map not [true, false, true, false] = [false, true, false, true]
 val test_unfold_map_4 = unfold_map (fn x => "fnord " ^ x) ["a", "quick", "brown", "fox"] =
     ["fnord a", "fnord quick", "fnord brown", "fnord fox"]
-(*
+
 (* So Imperative *)
 val test_do_until_1 = do_until (fn x => x div 2) (fn x => x mod 2 <> 0) 48 = 3
 val test_do_until_2 = do_until (fn x => x div 2) (fn x => x mod 2 <> 0) 9 = 9
 val test_do_until_3 = do_until (fn x => x ^ " ") (fn x => String.size x > 9) "abcde" = "abcde     "
-
+(*
 (* Yet Another Factorial *)
 val test_imp_factorial_1 = imp_factorial 4 = 24
 val test_imp_factorial_2 = imp_factorial 0 = 1

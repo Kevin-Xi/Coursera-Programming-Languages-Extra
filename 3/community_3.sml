@@ -19,3 +19,9 @@ val factorial = (List.foldl (op * ) 1) o (unfold (fn x => if x < 1 then NONE els
 fun unfold_map f =
   unfold (fn xs => case xs of [] => NONE
 			    | x::xs' => SOME(xs', f x));
+
+(* So Imperative *)
+fun do_until f p x =
+  if p x
+  then x
+  else do_until f p (f x);
