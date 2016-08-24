@@ -51,11 +51,11 @@ val test_imp_factorial_1 = imp_factorial 4 = 24
 val test_imp_factorial_2 = imp_factorial 0 = 1
 val test_imp_factorial_3 = imp_factorial 5 = 120
 val test_imp_factorial_4 = imp_factorial 7 = 5040
-(*
+
 (* Fixed Point *)
 val test_fixed_point_1 = fixed_point (fn x => x div 2) 17 = 0
 val test_fixed_point_2 = fixed_point (fn x => x) 17 = 17
-
+(*
 (* Newton's Method *)
 val test_my_sqrt_1 = abs (my_sqrt 2.0 - Math.sqrt 2.0) < 0.01
 val test_my_sqrt_2 = abs (my_sqrt 9.0 - Math.sqrt 9.0) < 0.01

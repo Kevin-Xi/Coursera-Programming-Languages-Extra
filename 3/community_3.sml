@@ -31,3 +31,8 @@ fun imp_factorial n =
   #1 (do_until (fn (acc, x) => (acc * x, x - 1))
 	       (fn (_, x) => x < 1)
 	       (1, n));
+
+(* Fixed Point *)
+fun fixed_point f =
+  do_until f
+	   (fn x => f x = x);
