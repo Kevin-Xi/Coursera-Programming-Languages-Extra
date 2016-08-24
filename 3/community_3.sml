@@ -14,3 +14,8 @@ fun unfold f state =
 (* A Novel Approach *)
 (* The time complexity is O(n) as tail-recursive version, but the space complexity is O(n) compare to O(1) of tail-recursive version *)
 val factorial = (List.foldl (op * ) 1) o (unfold (fn x => if x < 1 then NONE else SOME(x - 1, x)));
+
+(* Unforeseen Developments *)
+fun unfold_map f =
+  unfold (fn xs => case xs of [] => NONE
+			    | x::xs' => SOME(xs', f x));
