@@ -54,3 +54,8 @@ fun tree_fold f acc t =
   case t of
       leaf => acc
     | node {value, left, right} => f(tree_fold f acc left, value, tree_fold f acc right);
+
+fun tree_unfold f state =
+  case f state of
+      NONE => leaf
+    | SOME (l_state, v, r_state) => node {value=v, left=tree_unfold f l_state, right=tree_unfold f r_state};
