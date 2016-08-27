@@ -55,7 +55,7 @@ val test_imp_factorial_4 = imp_factorial 7 = 5040
 (* Fixed Point *)
 val test_fixed_point_1 = fixed_point (fn x => x div 2) 17 = 0
 val test_fixed_point_2 = fixed_point (fn x => x) 17 = 17
-(*
+
 (* Newton's Method *)
 val test_my_sqrt_1 = abs (my_sqrt 2.0 - Math.sqrt 2.0) < 0.01
 val test_my_sqrt_2 = abs (my_sqrt 9.0 - Math.sqrt 9.0) < 0.01
@@ -63,7 +63,7 @@ val test_my_sqrt_3 = abs (my_sqrt 81.0 - Math.sqrt 81.0) < 0.01
 val test_my_sqrt_4 = abs (my_sqrt 10.0 - Math.sqrt 10.0) < 0.01
 val test_my_sqrt_5 = abs (my_sqrt 3.0 - Math.sqrt 3.0) < 0.01
 val test_my_sqrt_6 = abs (my_sqrt 0.25 - Math.sqrt 0.25) < 0.01
-
+(*
 (* Deeper Into The Woods *)
 
 val test_tree_fold_1 = tree_fold (fn (l, v, r) => l ^ v ^ r) "!"

@@ -36,3 +36,13 @@ fun imp_factorial n =
 fun fixed_point f =
   do_until f
 	   (fn x => f x = x);
+
+(* Newton's Method *)
+fun my_sqrt n =
+  let
+      fun almost_fixed_point f =
+	do_until f
+		 (fn x => abs(f x - x) < 0.0001)
+  in
+      almost_fixed_point (fn x => 0.5 * (x + n/x)) n
+  end;
