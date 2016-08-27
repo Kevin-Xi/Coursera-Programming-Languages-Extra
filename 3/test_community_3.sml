@@ -63,7 +63,7 @@ val test_my_sqrt_3 = abs (my_sqrt 81.0 - Math.sqrt 81.0) < 0.01
 val test_my_sqrt_4 = abs (my_sqrt 10.0 - Math.sqrt 10.0) < 0.01
 val test_my_sqrt_5 = abs (my_sqrt 3.0 - Math.sqrt 3.0) < 0.01
 val test_my_sqrt_6 = abs (my_sqrt 0.25 - Math.sqrt 0.25) < 0.01
-(*
+
 (* Deeper Into The Woods *)
 
 val test_tree_fold_1 = tree_fold (fn (l, v, r) => l ^ v ^ r) "!"
@@ -73,7 +73,7 @@ val test_tree_fold_2 = tree_fold (fn (l, v, r) => l * r * v) 1 leaf = 1
 val test_tree_fold_3 = tree_fold (fn (l, v, r) => v - l - r) 1
     (node { value = 10, left = node { value = 5, left = leaf, right = leaf },
     right = node { value = 3, left = leaf, right = leaf }}) = 6
-
+(*
 val test_tree_unfold_1 = tree_unfold (fn x => if x = 0 then NONE else SOME (x - 1, x, x - 1)) 2 =
     node { value = 2, left = node { value = 1, left = leaf, right = leaf },
     right = node { value = 1, left = leaf, right = leaf }}

@@ -46,3 +46,11 @@ fun my_sqrt n =
   in
       almost_fixed_point (fn x => 0.5 * (x + n/x)) n
   end;
+
+(* Deeper Into The Woods *)
+datatype 'a tree = leaf | node of { value: 'a, left: 'a tree, right: 'a tree };
+
+fun tree_fold f acc t =
+  case t of
+      leaf => acc
+    | node {value, left, right} => f(tree_fold f acc left, value, tree_fold f acc right);
