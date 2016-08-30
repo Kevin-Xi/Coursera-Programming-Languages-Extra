@@ -59,3 +59,28 @@ fun tree_unfold f state =
   case f state of
       NONE => leaf
     | SOME (l_state, v, r_state) => node {value=v, left=tree_unfold f l_state, right=tree_unfold f r_state};
+
+(* A Grand Challenge *)
+datatype expr = literal_bool | literal_int | binary_bool_op of expr * expr | binary_int_op of expr * expr | comparison of expr * expr | conditional of expr * expr * expr;
+
+datatype expr_type = type_bool | type_int;
+
+exception TypeError;
+
+fun infer_type e =
+  case e of
+      literal_bool => type_bool
+    | literal_int => type_int
+    | binary_bool_op (e1, e2) => (case (infer_type e1, infer_type e2) of
+				     (type_bool, type_bool) => type_bool
+				   | _ => raise TypeError)
+    | binary_int_op (e1, e2) => (case (infer_type e1, infer_type e2) of
+				    (type_int, type_int) => type_int
+				  | _ => raise TypeError)
+    | comparison (e1, e2) => (case (infer_type e1, infer_type e2) of
+				  (type_int, type_int) => type_bool
+				| _ => raise TypeError)
+    | conditional (e1, e2, e3) => (case (infer_type e1, infer_type e2, infer_type e3) of
+				       (type_bool, type_bool, type_bool) => type_bool
+				     | (type_bool, type_int, type_int) => type_int
+				     | _ => raise TypeError);
