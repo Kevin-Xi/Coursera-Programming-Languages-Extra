@@ -84,3 +84,15 @@ fun infer_type e =
 				       (type_bool, type_bool, type_bool) => type_bool
 				     | (type_bool, type_int, type_int) => type_int
 				     | _ => raise TypeError);
+
+(* GCD -- Final Redux *)
+fun gcd (a: int, b: int) =
+  if a=b
+  then a
+  else
+      if a<b
+      then gcd (a, b-a)
+      else gcd (a-b, b);
+
+fun gcd_list xs =
+  List.foldl gcd (hd xs) (tl xs);

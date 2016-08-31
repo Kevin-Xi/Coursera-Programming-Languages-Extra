@@ -114,3 +114,116 @@ val test_infer_type_15 = infer_type (conditional (comparison (literal_int, liter
     literal_bool, comparison (literal_int, literal_int))) = type_bool
 val test_infer_type_16 = (infer_type (conditional (binary_int_op (literal_int, literal_int),
     literal_bool, comparison (literal_int, literal_int))); false) handle TypeError => true = true
+
+(** Back To The Future! 2 **)
+
+(* GCD -- Final Redux *)
+val test_gcd_list_1 = gcd_list [18, 12, 3] = 3
+val test_gcd_list_2 = gcd_list [18] = 18
+val test_gcd_list_3 = gcd_list [18, 12, 13] = 1
+val test_gcd_list_4 = gcd_list [10, 18, 12] = 2
+val test_gcd_list_5 = gcd_list [100, 1000, 1] = 1
+val test_gcd_list_6 = gcd_list [18, 12, 180, 42] = 6
+val test_gcd_list_7 = gcd_list [18, 12] = 6
+(*
+(* Element Of A List -- Final Redux *)
+val test_any_divisible_by_1 = any_divisible_by ([13, 1, 20], 5) = true
+val test_any_divisible_by_2 = any_divisible_by ([13, 1, 20], 3) = false
+val test_any_divisible_by_3 = any_divisible_by ([], 5) = false
+val test_any_divisible_by_4 = any_divisible_by ([13, 1, 20], 13) = true
+val test_any_divisible_by_5 = any_divisible_by ([13, 1, 20], 12) = false
+val test_any_divisible_by_6 = any_divisible_by ([13, 1, 20], 1) = true
+
+(* Quirky Addition -- Continued -- Final Redux *)
+val test_add_all_opt_1 = add_all_opt [SOME 1, NONE, SOME 3] = SOME 4
+val test_add_all_opt_2 = add_all_opt [] = NONE
+val test_add_all_opt_3 = add_all_opt [NONE, NONE, NONE] = NONE
+val test_add_all_opt_4 = add_all_opt [SOME 123] = SOME 123
+val test_add_all_opt_5 = add_all_opt [NONE, SOME ~1, NONE, NONE] = SOME ~1
+
+(* Flip Flop -- Final Redux *)
+val test_alternate_1 = alternate [1, 2, 3, 4] = ~2
+val test_alternate_2 = alternate [] = 0
+val test_alternate_3 = alternate [~100] = ~100
+val test_alternate_4 = alternate [1, ~2, 3, ~4] = 10
+val test_alternate_5 = alternate [~1, 2, ~3, 4] = ~10
+
+(* Minimum/Maximum -- Final Redux *)
+val test_min_max_1 = min_max [3, 1, 2, 5, 4] = (1, 5)
+val test_min_max_2 = min_max [1] = (1, 1)
+val test_min_max_3 = min_max [~1000000, 1, 1, 1, 1000000] = (~1000000, 1000000)
+
+(* Lists And Tuples, Oh My! -- Final Redux *)
+val test_unzip_1 = unzip [(1, 2), (3, 4), (5, 6)] = ([1, 3, 5], [2, 4, 6])
+(* causes polyEqual warning if unzip has a polymorphic type -- that's ok *)
+val test_unzip_2 = unzip [] = ([], [])
+val test_unzip_3 = unzip [(123, 321), (321, 123)] = ([123, 321], [321, 123])
+
+(* Lists And Tuples, Oh My! -- Continued (1) -- Final Redux *)
+val test_zip_1 = zip ([1, 2, 3], [4, 6]) = [(1, 4), (2, 6)]
+val test_zip_2 = zip ([], [4, 6]) = []
+val test_zip_3 = zip ([1, 2, 3], []) = []
+val test_zip_4 = zip ([], []) = []
+val test_zip_5 = zip ([1, 2], [4, 6, 8]) = [(1, 4), (2, 6)]
+val test_zip_6 = zip ([1, 2, 3], [4, 6, 8]) = [(1, 4), (2, 6), (3, 8)]
+
+(* BBCA -- Final Redux *)
+val test_repeats_list_1 = repeats_list (["abc", "def", "ghi"], [4, 0, 3]) =
+    ["abc", "abc", "abc", "abc", "ghi", "ghi", "ghi"]
+(* causes polyEqual warning if repeats_list has a polymorphic type -- that's ok *)
+val test_repeats_list_2 = repeats_list ([], []) = []
+val test_repeats_list_3 = repeats_list (["a"], [10]) =
+    ["a", "a", "a", "a", "a", "a", "a", "a", "a", "a"]
+
+(* 38 Cons Cells -- Final Redux *)
+val test_length_of_a_list_1 = length_of_a_list [1] = 1
+val test_length_of_a_list_2 = length_of_a_list [] = 0
+val test_length_of_a_list_3 = length_of_a_list [[], [], [1, 2]] = 3
+val test_length_of_a_list_4 = length_of_a_list [(1, "hi"), (2, "there")] = 2
+val test_length_of_a_list_5 = length_of_a_list ["a", "quick", "brown", "fox"] = 4
+
+(* Forest For The Trees -- Final Redux *)
+
+val test_tree_height_1 = tree_height (node { value = 0, left = node { value = 0,
+    left = node { value = 0, left = leaf, right = leaf }, right = leaf },
+    right = node { value = 0, left = leaf, right = leaf } }) = 3
+val test_tree_height_2 = tree_height leaf = 0
+val test_tree_height_3 = tree_height (node { value = "abcde", left = leaf, right = leaf }) = 1
+val test_tree_height_4 = tree_height (node { value = true, left = leaf, right = leaf }) = 1
+val test_tree_height_5 = tree_height (node { value = 0, left = leaf,
+    right = node { value = 0, left = node { value = 0,
+    left = leaf, right = leaf }, right = leaf } }) = 3
+
+val test_sum_tree_1 = sum_tree (node { value = 1, left = node { value = 2,
+    left = node { value = 3, left = leaf, right = leaf }, right = leaf },
+    right = node { value = 4, left = leaf, right = leaf } }) = 10
+val test_sum_tree_2 = sum_tree leaf = 0
+val test_sum_tree_3 = sum_tree (node { value = 1729, left = leaf, right = leaf }) = 1729
+val test_sum_tree_4 = sum_tree (node { value = 32, left = leaf, right = node { value = ~60,
+    left = node { value = 17, left = leaf, right = leaf }, right = leaf } }) = ~11
+
+val test_gardener_1 = gardener (node { value = leave_me_alone, left = node { value = prune_me,
+    left = node { value = leave_me_alone, left = leaf, right = leaf }, right = leaf },
+    right = node { value = leave_me_alone, left = leaf, right = leaf } }) =
+    node { value = leave_me_alone, left = leaf, right = node { value = leave_me_alone, left = leaf, right = leaf } }
+val test_gardener_2 = gardener leaf = leaf
+val test_gardener_3 = gardener (node { value = prune_me, left = node { value = prune_me,
+    left = node { value = leave_me_alone, left = leaf, right = leaf }, right = leaf },
+    right = node { value = leave_me_alone, left = leaf, right = leaf } }) = leaf
+val test_gardener_4 = gardener (node { value = leave_me_alone, left = node { value = leave_me_alone,
+    left = node { value = leave_me_alone, left = leaf, right = leaf }, right = leaf },
+    right = node { value = leave_me_alone, left = leaf, right = leaf } }) =
+    node { value = leave_me_alone, left = node { value = leave_me_alone,
+    left = node { value = leave_me_alone, left = leaf, right = leaf }, right = leaf },
+    right = node { value = leave_me_alone, left = leaf, right = leaf } }
+val test_gardener_5 = gardener (node { value = leave_me_alone, left = node { value = leave_me_alone,
+    left = node { value = prune_me, left = leaf, right = leaf }, right = leaf },
+    right = node { value = prune_me, left = leaf, right = leaf } }) =
+    node { value = leave_me_alone, left = node { value = leave_me_alone, left = leaf, right = leaf }, right = leaf }
+val test_gardener_6 = gardener (node { value = prune_me, left = leaf, right = leaf }) = leaf
+val test_gardener_7 = gardener (node { value = leave_me_alone, left = leaf, right = leaf }) =
+    node { value = leave_me_alone, left = leaf, right = leaf }
+val test_gardener_8 = gardener (node { value = leave_me_alone, left = leaf,
+    right = node { value = prune_me, left = node { value = prune_me, left = leaf, right = leaf }, right = leaf } }) =
+    node { value = leave_me_alone, left = leaf, right = leaf }
+*)
