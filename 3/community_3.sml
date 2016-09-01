@@ -103,3 +103,12 @@ fun is_divisible_by (a: int, b: int) =
 
 fun any_divisible_by (xs, d) =
   List.foldl (fn (x, acc) => acc orelse is_divisible_by(x, d)) false xs;
+
+(* Quirky Addition *)
+val add_all_opt =
+  List.foldl (fn (x, acc) =>
+		 case (x, acc) of
+		     (SOME v, SOME av) => SOME (v + av)
+		   | (NONE, acc) => acc
+		   | (x, _) => x)
+	     NONE;
