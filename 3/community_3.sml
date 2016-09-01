@@ -112,3 +112,6 @@ val add_all_opt =
 		   | (NONE, acc) => acc
 		   | (x, _) => x)
 	     NONE;
+
+(* Flip Flop -- Final Redux *)
+(* I think it is not elegant with foldl, so just not *)
