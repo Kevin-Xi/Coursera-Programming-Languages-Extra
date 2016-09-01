@@ -115,3 +115,7 @@ val add_all_opt =
 
 (* Flip Flop -- Final Redux *)
 (* I think it is not elegant with foldl, so just not *)
+
+(* Minimum/Maximum -- Final Redux *)
+fun min_max xs = (* can use (x::xs) as param *)
+  List.foldl (fn (x, (min, max)) => (if x < min then x else min, if x > max then x else max)) (hd xs, hd xs) (tl xs);
