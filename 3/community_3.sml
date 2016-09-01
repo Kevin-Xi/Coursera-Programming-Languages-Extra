@@ -96,3 +96,10 @@ fun gcd (a: int, b: int) =
 
 fun gcd_list xs =
   List.foldl gcd (hd xs) (tl xs);
+
+(* Element Of A List -- Final Redux *)
+fun is_divisible_by (a: int, b: int) =
+  a mod b = 0;
+
+fun any_divisible_by (xs, d) =
+  List.foldl (fn (x, acc) => acc orelse is_divisible_by(x, d)) false xs;
