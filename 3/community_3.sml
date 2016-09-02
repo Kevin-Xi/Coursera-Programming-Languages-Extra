@@ -119,3 +119,10 @@ val add_all_opt =
 (* Minimum/Maximum -- Final Redux *)
 fun min_max xs = (* can use (x::xs) as param *)
   List.foldl (fn (x, (min, max)) => (if x < min then x else min, if x > max then x else max)) (hd xs, hd xs) (tl xs);
+
+(* Lists And Tuples, Oh My! - Final Redux *)
+(*val unzip_broken =
+  List.foldl (fn (x, acc) => ((#1 acc) @ (#1 x), (#2 acc) @ (#2 x))) ([], []);*)
+
+fun unzip xs =
+  List.foldr (fn ((x, y), (xs, ys)) => (x :: xs, y :: ys)) ([], []) xs;
