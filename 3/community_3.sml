@@ -126,3 +126,20 @@ fun min_max xs = (* can use (x::xs) as param *)
 
 fun unzip xs =
   List.foldr (fn ((x, y), (xs, ys)) => (x :: xs, y :: ys)) ([], []) xs;
+
+(* Lists And Tuples, Oh My! -- Continued (1) -- Final Redux *)
+(*fun zip xs =
+    unfold (fn (s1, s2) => case (s1, s2) of
+			       ([], _) => NONE
+			     | (_, []) => NONE
+			     | (_, _) => SOME ((tl s1, tl s2), (hd s1, hd s2))) xs;*)
+
+fun zip xs =
+  let
+      fun helper param =
+	case param of
+	    (x::xs, y::ys) => SOME ((xs, ys), (x, y))
+	  | _ => NONE
+  in
+      unfold helper xs
+  end;

@@ -159,7 +159,7 @@ val test_unzip_1 = unzip [(1, 2), (3, 4), (5, 6)] = ([1, 3, 5], [2, 4, 6])
 (* causes polyEqual warning if unzip has a polymorphic type -- that's ok *)
 val test_unzip_2 = unzip [] = ([], [])
 val test_unzip_3 = unzip [(123, 321), (321, 123)] = ([123, 321], [321, 123])
-(*
+
 (* Lists And Tuples, Oh My! -- Continued (1) -- Final Redux *)
 val test_zip_1 = zip ([1, 2, 3], [4, 6]) = [(1, 4), (2, 6)]
 val test_zip_2 = zip ([], [4, 6]) = []
@@ -167,7 +167,7 @@ val test_zip_3 = zip ([1, 2, 3], []) = []
 val test_zip_4 = zip ([], []) = []
 val test_zip_5 = zip ([1, 2], [4, 6, 8]) = [(1, 4), (2, 6)]
 val test_zip_6 = zip ([1, 2, 3], [4, 6, 8]) = [(1, 4), (2, 6), (3, 8)]
-
+(*
 (* BBCA -- Final Redux *)
 val test_repeats_list_1 = repeats_list (["abc", "def", "ghi"], [4, 0, 3]) =
     ["abc", "abc", "abc", "abc", "ghi", "ghi", "ghi"]
