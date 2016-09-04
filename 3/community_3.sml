@@ -143,3 +143,18 @@ fun zip xs =
   in
       unfold helper xs
   end;
+
+(* BBCA -- Final Redux *)
+(* Is there a way to give unfold to auto-gen fold?
+   Say. given unfold some_fun xs = ys, generate a some_fun2 that
+   make fold some_fun2 ys = xs sound? *)
+fun repeats_list xs =
+  let
+      fun helper param =
+	case param of
+	    (_::ss, 0::cs) => helper(ss, cs)
+	  | (x::xs, c::cs) => SOME((x :: xs, c-1 :: cs), x)
+	  | _ => NONE
+  in
+      unfold helper xs
+  end;

@@ -167,7 +167,7 @@ val test_zip_3 = zip ([1, 2, 3], []) = []
 val test_zip_4 = zip ([], []) = []
 val test_zip_5 = zip ([1, 2], [4, 6, 8]) = [(1, 4), (2, 6)]
 val test_zip_6 = zip ([1, 2, 3], [4, 6, 8]) = [(1, 4), (2, 6), (3, 8)]
-(*
+
 (* BBCA -- Final Redux *)
 val test_repeats_list_1 = repeats_list (["abc", "def", "ghi"], [4, 0, 3]) =
     ["abc", "abc", "abc", "abc", "ghi", "ghi", "ghi"]
@@ -175,7 +175,7 @@ val test_repeats_list_1 = repeats_list (["abc", "def", "ghi"], [4, 0, 3]) =
 val test_repeats_list_2 = repeats_list ([], []) = []
 val test_repeats_list_3 = repeats_list (["a"], [10]) =
     ["a", "a", "a", "a", "a", "a", "a", "a", "a", "a"]
-
+(*
 (* 38 Cons Cells -- Final Redux *)
 val test_length_of_a_list_1 = length_of_a_list [1] = 1
 val test_length_of_a_list_2 = length_of_a_list [] = 0
