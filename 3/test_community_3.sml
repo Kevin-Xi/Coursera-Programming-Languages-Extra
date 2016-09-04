@@ -175,14 +175,14 @@ val test_repeats_list_1 = repeats_list (["abc", "def", "ghi"], [4, 0, 3]) =
 val test_repeats_list_2 = repeats_list ([], []) = []
 val test_repeats_list_3 = repeats_list (["a"], [10]) =
     ["a", "a", "a", "a", "a", "a", "a", "a", "a", "a"]
-(*
+
 (* 38 Cons Cells -- Final Redux *)
 val test_length_of_a_list_1 = length_of_a_list [1] = 1
 val test_length_of_a_list_2 = length_of_a_list [] = 0
 val test_length_of_a_list_3 = length_of_a_list [[], [], [1, 2]] = 3
 val test_length_of_a_list_4 = length_of_a_list [(1, "hi"), (2, "there")] = 2
 val test_length_of_a_list_5 = length_of_a_list ["a", "quick", "brown", "fox"] = 4
-
+(*
 (* Forest For The Trees -- Final Redux *)
 
 val test_tree_height_1 = tree_height (node { value = 0, left = node { value = 0,

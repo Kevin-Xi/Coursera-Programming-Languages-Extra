@@ -158,3 +158,7 @@ fun repeats_list xs =
   in
       unfold helper xs
   end;
+
+(* 38 Cons Cells -- Final Redux *)
+fun length_of_a_list xs =
+    List.foldl (fn (x, acc) => acc + 1) 0 xs;
