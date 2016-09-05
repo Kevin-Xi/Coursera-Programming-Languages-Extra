@@ -166,3 +166,6 @@ fun length_of_a_list xs =
 (* Forest For The Trees *)
 fun tree_height t =
   tree_fold (fn (l, v, r) => if l > r then 1 + l else 1 + r) 0 t;
+
+fun sum_tree t =
+  tree_fold (fn (l, v, r) => l + v + r) 0 t;

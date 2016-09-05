@@ -194,7 +194,7 @@ val test_tree_height_4 = tree_height (node { value = true, left = leaf, right = 
 val test_tree_height_5 = tree_height (node { value = 0, left = leaf,
     right = node { value = 0, left = node { value = 0,
     left = leaf, right = leaf }, right = leaf } }) = 3
-(*
+
 val test_sum_tree_1 = sum_tree (node { value = 1, left = node { value = 2,
     left = node { value = 3, left = leaf, right = leaf }, right = leaf },
     right = node { value = 4, left = leaf, right = leaf } }) = 10
@@ -202,7 +202,7 @@ val test_sum_tree_2 = sum_tree leaf = 0
 val test_sum_tree_3 = sum_tree (node { value = 1729, left = leaf, right = leaf }) = 1729
 val test_sum_tree_4 = sum_tree (node { value = 32, left = leaf, right = node { value = ~60,
     left = node { value = 17, left = leaf, right = leaf }, right = leaf } }) = ~11
-
+(*
 val test_gardener_1 = gardener (node { value = leave_me_alone, left = node { value = prune_me,
     left = node { value = leave_me_alone, left = leaf, right = leaf }, right = leaf },
     right = node { value = leave_me_alone, left = leaf, right = leaf } }) =
