@@ -162,3 +162,7 @@ fun repeats_list xs =
 (* 38 Cons Cells -- Final Redux *)
 fun length_of_a_list xs =
     List.foldl (fn (x, acc) => acc + 1) 0 xs;
+
+(* Forest For The Trees *)
+fun tree_height t =
+  tree_fold (fn (l, v, r) => if l > r then 1 + l else 1 + r) 0 t;

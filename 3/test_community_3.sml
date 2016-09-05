@@ -182,7 +182,7 @@ val test_length_of_a_list_2 = length_of_a_list [] = 0
 val test_length_of_a_list_3 = length_of_a_list [[], [], [1, 2]] = 3
 val test_length_of_a_list_4 = length_of_a_list [(1, "hi"), (2, "there")] = 2
 val test_length_of_a_list_5 = length_of_a_list ["a", "quick", "brown", "fox"] = 4
-(*
+
 (* Forest For The Trees -- Final Redux *)
 
 val test_tree_height_1 = tree_height (node { value = 0, left = node { value = 0,
@@ -194,7 +194,7 @@ val test_tree_height_4 = tree_height (node { value = true, left = leaf, right = 
 val test_tree_height_5 = tree_height (node { value = 0, left = leaf,
     right = node { value = 0, left = node { value = 0,
     left = leaf, right = leaf }, right = leaf } }) = 3
-
+(*
 val test_sum_tree_1 = sum_tree (node { value = 1, left = node { value = 2,
     left = node { value = 3, left = leaf, right = leaf }, right = leaf },
     right = node { value = 4, left = leaf, right = leaf } }) = 10
