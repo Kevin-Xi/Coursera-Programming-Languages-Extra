@@ -169,3 +169,12 @@ fun tree_height t =
 
 fun sum_tree t =
   tree_fold (fn (l, v, r) => l + v + r) 0 t;
+
+datatype flag = leave_me_alone | prune_me;
+
+fun gardener t =
+  tree_unfold (fn t => case t of
+			   leaf => NONE
+			 | node { value=prune_me, left, right }=> NONE
+			 | node { value, left, right } => SOME (left, value, right))
+	      t;
