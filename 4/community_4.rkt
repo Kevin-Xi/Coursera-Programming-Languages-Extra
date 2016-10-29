@@ -19,3 +19,18 @@
                                                   (cons (+ a b)
                                                         (lambda () (f b (+ a b)))))])
                                       (lambda () (f 0 1))))))))
+
+;; 11
+(define-syntax perform
+  (syntax-rules (if unless)
+    [(perform e1 if e2)
+     (let ([r2 e2])
+       (if r2
+           e1
+           r2))]
+    [(perform e1 unless e2)
+     ;; cannot just (perform e1 if (not e2)) because need to eval to e2 ife2 is #t
+     (let ([r2 e2])
+       (if (not r2)
+           e1
+           r2))]))

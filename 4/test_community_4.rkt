@@ -16,6 +16,13 @@
 
    ;; 2
    (check-equal? (stream-for-n-steps fibonacci 10) (list 0 1 1 2 3 5 8 13 21 34) "fibonacci")
+
+   ;; 3
+   (check-equal? (perform 1 if #t) 1 "perform-1")
+   (check-equal? (perform 1 if #f) #f "perform-2")
+   (check-equal? (perform 1 unless #t) #t "perform-3")
+   (check-equal? (perform 1 unless #f) 1 "perform-4")
+
    ))
 
 (require rackunit/text-ui)
