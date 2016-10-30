@@ -19,6 +19,12 @@
                                                   (cons (+ a b)
                                                         (lambda () (f b (+ a b)))))])
                                       (lambda () (f 0 1))))))))
+;; 3
+(define (stream-until f s)
+  (let ([next (s)])
+    (if (f (car next))
+        (stream-until f (cdr next))
+        #f)))
 
 ;; 11
 (define-syntax perform
