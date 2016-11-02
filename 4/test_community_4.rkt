@@ -27,6 +27,9 @@
                             (set! x (+ x 1)))) fibonacci)
                      x)) 7 "stream-until")
 
+   ;; 4
+   (check-equal? (stream-for-n-steps (stream-map (λ (x) (+ x 1)) fibonacci) 10) (list 1 2 2 3 4 6 9 14 22 35) "stream-map")
+
    ;; 11
    (check-equal? (perform 1 if #t) 1 "perform-1")
    (check-equal? (perform 1 if #f) #f "perform-2")

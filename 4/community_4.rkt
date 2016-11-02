@@ -26,6 +26,11 @@
         (stream-until f (cdr next))
         #f)))
 
+;; 4
+(define (stream-map f s)
+  (let ([next (s)])
+    (λ () (cons (f (car next)) (stream-map f (cdr next))))))
+
 ;; 11
 (define-syntax perform
   (syntax-rules (if unless)
